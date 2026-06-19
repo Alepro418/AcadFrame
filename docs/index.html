@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcadFrame - Documentación</title>
+    <!-- Fuente Inter (opcional pero recomendada) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <!-- AcadFrame CSS -->
+    <link rel="stylesheet" href="../css/acadframe.css">
+    <style>
+        /* Ajustes específicos para la documentación */
+        .demo-card {
+            margin-bottom: 2rem;
+        }
+        pre {
+            background: var(--ac-gray-900);
+            color: var(--ac-gray-100);
+            padding: 1rem;
+            border-radius: var(--ac-radius-md);
+            overflow-x: auto;
+            font-size: 0.875rem;
+            margin: 1rem 0;
+        }
+        code {
+            font-family: var(--ac-font-mono);
+        }
+        .component-demo {
+            border: 1px solid var(--ac-gray-200);
+            border-radius: var(--ac-radius-lg);
+            padding: 1.5rem;
+            background: white;
+            margin-bottom: 1.5rem;
+        }
+        .dark .component-demo {
+            background: var(--ac-gray-100);
+            border-color: var(--ac-gray-200);
+        }
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1rem;
+        }
+        .color-box {
+            height: 80px;
+            border-radius: var(--ac-radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: white;
+            text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="ac-theme-ocean">
+    <div class="ac-layout">
+        <!-- Sidebar con navegación -->
+        <aside class="ac-sidebar">
+            <div class="ac-sidebar-brand">📘 AcadFrame</div>
+            <nav class="ac-sidebar-nav">
+                <a href="#intro" class="ac-sidebar-item active">Introducción</a>
+                <a href="#instalacion" class="ac-sidebar-item">Instalación</a>
+                <a href="#variables" class="ac-sidebar-item">Variables</a>
+                <div class="ac-sidebar-dropdown">
+                    <div class="ac-sidebar-dropdown-toggle">
+                        <span class="ac-sidebar-icon">🧩</span>
+                        <span>Componentes</span>
+                        <span class="ac-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="ac-sidebar-dropdown-menu">
+                        <a href="#botones">Botones</a>
+                        <a href="#tarjetas">Tarjetas</a>
+                        <a href="#formularios">Formularios</a>
+                        <a href="#tablas">Tablas</a>
+                        <a href="#alertas">Alertas</a>
+                        <a href="#navbar">Navbar</a>
+                        <a href="#sidebar">Sidebar</a>
+                        <a href="#dropdowns">Dropdowns</a>
+                        <a href="#reportes">Reportes</a>
+                    </div>
+                </div>
+                <a href="#utilidades" class="ac-sidebar-item">Utilidades</a>
+                <a href="#temas" class="ac-sidebar-item">Temas y Modo Oscuro</a>
+                <div class="ac-sidebar-dropdown">
+                    <div class="ac-sidebar-dropdown-toggle">
+                        <span class="ac-sidebar-icon">⚡</span>
+                        <span>JavaScript API</span>
+                        <span class="ac-dropdown-arrow">▼</span>
+                    </div>
+                    <div class="ac-sidebar-dropdown-menu">
+                        <a href="#toast">Toast</a>
+                        <a href="#loader">Loader</a>
+                        <a href="#export">Exportar</a>
+                        <a href="#validacion">Validación</a>
+                    </div>
+                </div>
+                <a href="#demo-completo" class="ac-sidebar-item">Ejemplo completo</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="ac-main">
+            <div class="ac-topbar">
+                <h1 class="ac-heading-xl">AcadFrame</h1>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="ac-btn-icon" id="darkModeBtn" data-ac-darkmode-toggle title="Modo oscuro">🌙</button>
+                    <div class="ac-avatar">AF</div>
+                </div>
+            </div>
+            <div class="ac-content">
+                <!-- Sección Introducción -->
+                <section id="intro">
+                    <h2>📌 Introducción</h2>
+                    <p><strong>AcadFrame</strong> es un framework CSS/JS ligero y moderno, diseñado específicamente para <strong>sistemas académicos</strong> (CRUDs, reportes, dashboards). Ofrece componentes reutilizables, temas personalizables, modo oscuro y utilidades prácticas.</p>
+                    <div class="ac-alert ac-alert-info">
+                        <div class="ac-alert-title">🎉 Hecho por y para estudiantes</div>
+                        <div class="ac-alert-message">Basado en la experiencia real de proyectos universitarios.</div>
+                    </div>
+                </section>
+
+                <!-- Instalación -->
+                <section id="instalacion">
+                    <h2>📦 Instalación</h2>
+                    <p>Copia los archivos <code>acadframe.css</code> y <code>acadframe.js</code> en tu proyecto, o usa los enlaces directos:</p>
+                    <pre><code>&lt;link rel="stylesheet" href="acadframe/css/acadframe.css"&gt;
+&lt;script src="acadframe/js/acadframe.js" defer&gt;&lt;/script&gt;</code></pre>
+                    <p>Opcional: importa la fuente <strong>Inter</strong> desde Google Fonts.</p>
+                </section>
+
+                <!-- Variables -->
+                <section id="variables">
+                    <h2>🎨 Variables CSS (personalización)</h2>
+                    <p>Puedes sobreescribir las variables en <code>:root</code> para cambiar colores, bordes, sombras, etc. Ejemplo:</p>
+                    <pre><code>:root {
+    --ac-primary-500: #8b5cf6;
+    --ac-radius-md: 0.75rem;
+}</code></pre>
+                    <div class="color-grid">
+                        <div class="color-box" style="background: var(--ac-primary-500);">--ac-primary-500</div>
+                        <div class="color-box" style="background: var(--ac-success);">--ac-success</div>
+                        <div class="color-box" style="background: var(--ac-danger);">--ac-danger</div>
+                        <div class="color-box" style="background: var(--ac-gray-500);">--ac-gray-500</div>
+                    </div>
+                </section>
+
+                <!-- Componentes (solo algunos como muestra; se puede extender) -->
+                <section id="botones">
+                    <h2>🔘 Botones</h2>
+                    <div class="component-demo">
+                        <button class="ac-btn ac-btn-primary">Primario</button>
+                        <button class="ac-btn ac-btn-secondary">Secundario</button>
+                        <button class="ac-btn ac-btn-success">Éxito</button>
+                        <button class="ac-btn ac-btn-danger">Peligro</button>
+                        <button class="ac-btn ac-btn-outline">Outline</button>
+                        <button class="ac-btn ac-btn-ghost">Ghost</button>
+                        <button class="ac-btn-icon">⭐</button>
+                    </div>
+                    <pre><code>&lt;button class="ac-btn ac-btn-primary"&gt;Primario&lt;/button&gt;</code></pre>
+                </section>
+
+                <section id="tarjetas">
+                    <h2>🃏 Tarjetas</h2>
+                    <div class="ac-grid-3">
+                        <div class="ac-card">
+                            <div class="ac-card-header"><h3>Tarjeta simple</h3></div>
+                            <div class="ac-card-body">Contenido de la tarjeta.</div>
+                            <div class="ac-card-footer"><button class="ac-btn-sm ac-btn-primary">Acción</button></div>
+                        </div>
+                        <div class="ac-stats-card ac-card">
+                            <div class="ac-stats-icon">📊</div>
+                            <div class="ac-stats-value">1,234</div>
+                            <div class="ac-stats-label">Ventas</div>
+                            <div class="ac-stats-trend up">+12%</div>
+                        </div>
+                    </div>
+                    <pre><code>&lt;div class="ac-card"&gt;...&lt;/div&gt;</code></pre>
+                </section>
+
+                <section id="formularios">
+                    <h2>📝 Formularios con validación</h2>
+                    <div class="component-demo">
+                        <form class="ac-form" id="demoForm">
+                            <div class="ac-form-group">
+                                <label class="ac-label required">Nombre</label>
+                                <input type="text" class="ac-input" name="nombre" required placeholder="Ej: Juan Pérez">
+                                <span class="ac-error-message"></span>
+                            </div>
+                            <div class="ac-form-group">
+                                <label class="ac-label required">Email</label>
+                                <input type="email" class="ac-input" name="email" required placeholder="correo@ejemplo.com">
+                                <span class="ac-error-message"></span>
+                            </div>
+                            <div class="ac-form-actions">
+                                <button type="submit" class="ac-btn ac-btn-primary">Enviar</button>
+                                <button type="reset" class="ac-btn ac-btn-secondary">Limpiar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <pre><code>&lt;form class="ac-form"&gt;
+    &lt;div class="ac-form-group"&gt;
+        &lt;label class="ac-label required"&gt;Nombre&lt;/label&gt;
+        &lt;input type="text" class="ac-input" required&gt;
+        &lt;span class="ac-error-message"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+    ...
+&lt;/form&gt;</code></pre>
+                </section>
+
+                <section id="tablas">
+                    <h2>📊 Tablas con búsqueda y ordenamiento</h2>
+                    <div class="ac-table-container">
+                        <input type="text" class="ac-search" placeholder="Buscar...">
+                        <table class="ac-table">
+                            <thead>
+                                <tr><th data-sort="nombre">Nombre</th><th data-sort="edad">Edad</th><th>Acciones</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Ana García</td><td>25</td><td class="ac-table-actions"><button>✏️</button><button>🗑️</button></td></tr>
+                                <tr><td>Luis Martínez</td><td>30</td><td class="ac-table-actions"><button>✏️</button><button>🗑️</button></td></tr>
+                                <tr><td>Carlos López</td><td>22</td><td class="ac-table-actions"><button>✏️</button><button>🗑️</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre><code>&lt;div class="ac-table-container"&gt;
+    &lt;input class="ac-search" placeholder="Buscar..."&gt;
+    &lt;table class="ac-table"&gt;
+        &lt;thead&gt;&lt;tr&gt;&lt;th data-sort="nombre"&gt;Nombre&lt;/th&gt;...&lt;/tr&gt;&lt;/thead&gt;
+        ...
+    &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+                </section>
+
+                <section id="alertas">
+                    <h2>🔔 Alertas</h2>
+                    <div class="component-demo">
+                        <div class="ac-alert ac-alert-success">✅ Operación exitosa</div>
+                        <div class="ac-alert ac-alert-danger">❌ Error al guardar</div>
+                        <div class="ac-alert ac-alert-warning">⚠️ Advertencia</div>
+                        <div class="ac-alert ac-alert-info">ℹ️ Información</div>
+                    </div>
+                    <pre><code>&lt;div class="ac-alert ac-alert-success"&gt;Mensaje&lt;/div&gt;</code></pre>
+                </section>
+
+                <!-- Navbar y sidebar ya se ven en la propia documentación -->
+                <section id="navbar">
+                    <h2>🧭 Navbar</h2>
+                    <div class="component-demo">
+                        <div class="ac-navbar">
+                            <div class="ac-navbar-brand">MiApp</div>
+                            <div class="ac-navbar-menu">
+                                <a href="#" class="ac-nav-link">Inicio</a>
+                                <div class="ac-dropdown">
+                                    <button class="ac-dropdown-toggle">Productos ▼</button>
+                                    <div class="ac-dropdown-menu"><a href="#">Listar</a><a href="#">Agregar</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="sidebar">
+                    <h2>📌 Sidebar</h2>
+                    <p>La sidebar que ves a la izquierda es un ejemplo real. Usa <code>.ac-sidebar</code>, <code>.ac-sidebar-dropdown</code> y <code>.ac-sidebar-item</code>.</p>
+                </section>
+
+                <section id="dropdowns">
+                    <h2>▼ Dropdowns</h2>
+                    <p>Coloca <code>.ac-dropdown</code> alrededor del botón y <code>.ac-dropdown-menu</code>. El JS se encarga del resto.</p>
+                </section>
+
+                <section id="reportes">
+                    <h2>📄 Reportes</h2>
+                    <div class="component-demo">
+                        <div class="ac-report-panel">
+                            <div class="ac-report-filters">
+                                <div class="ac-filter-group"><label>Desde</label><input type="date" class="ac-input"></div>
+                                <div class="ac-filter-group"><label>Hasta</label><input type="date" class="ac-input"></div>
+                                <button class="ac-btn ac-btn-primary" onclick="window.AcadFrame?.toast?.('Reporte generado', 'success')">Generar</button>
+                            </div>
+                            <div class="ac-report-preview">
+                                <div class="ac-report-header"><h2>Reporte de ventas</h2><p>Ejemplo</p></div>
+                                <table class="ac-table">...</table>
+                            </div>
+                            <div class="ac-report-actions">
+                                <button class="ac-btn-outline" onclick="alert('Exportar CSV')">📎 CSV</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Utilidades -->
+                <section id="utilidades">
+                    <h2>🛠️ Utilidades</h2>
+                    <p>Márgenes, paddings, texto, flex, grid, sombras, bordes redondeados, etc.</p>
+                    <pre><code>&lt;div class="mt-4 p-3 text-center bg-primary-light rounded-lg"&gt;Ejemplo&lt;/div&gt;</code></pre>
+                </section>
+
+                <!-- Temas y modo oscuro -->
+                <section id="temas">
+                    <h2>🎭 Temas y modo oscuro</h2>
+                    <p>Añade clase <code>.ac-theme-emerald</code> o <code>.ac-theme-rose</code> al <code>&lt;body&gt;</code>. Para modo oscuro: <code>class="dark"</code> o usa el botón con <code>data-ac-darkmode-toggle</code>.</p>
+                    <button class="ac-btn" id="toggleThemeBtn">Cambiar a tema esmeralda</button>
+                    <script>
+                        let themeIndex = 0;
+                        const themes = ['ac-theme-ocean', 'ac-theme-emerald', 'ac-theme-rose'];
+                        document.getElementById('toggleThemeBtn')?.addEventListener('click', () => {
+                            const body = document.body;
+                            themes.forEach(t => body.classList.remove(t));
+                            themeIndex = (themeIndex + 1) % themes.length;
+                            body.classList.add(themes[themeIndex]);
+                            window.AcadFrame?.toast?.(`Tema ${themes[themeIndex].replace('ac-theme-', '')}`, 'info');
+                        });
+                    </script>
+                </section>
+
+                <!-- JS API -->
+                <section id="toast">
+                    <h2>🍞 Toast (notificaciones)</h2>
+                    <pre><code>window.AcadFrame.toast('Mensaje', 'success'); // tipos: success, error, warning, info</code></pre>
+                    <button class="ac-btn" onclick="window.AcadFrame?.toast?.('¡Hola mundo!', 'success')">Mostrar toast</button>
+                </section>
+                <section id="loader">
+                    <h2>⏳ Loader</h2>
+                    <pre><code>window.AcadFrame.loader.show('Cargando...');
+// ... operación asíncrona ...
+window.AcadFrame.loader.hide();</code></pre>
+                    <button class="ac-btn" onclick="window.AcadFrame?.loader?.show(); setTimeout(()=>window.AcadFrame?.loader?.hide(), 2000)">Probar loader</button>
+                </section>
+                <section id="export">
+                    <h2>📎 Exportar tabla a CSV</h2>
+                    <pre><code>const tabla = document.querySelector('.ac-table');
+window.AcadFrame.export.toCSV(tabla, 'reporte.csv');</code></pre>
+                </section>
+                <section id="validacion">
+                    <h2>✅ Validación automática</h2>
+                    <p>Los formularios con clase <code>.ac-form</code> se validan automáticamente (campos <code>required</code>, email, number).</p>
+                </section>
+
+                <!-- Demo completo -->
+                <section id="demo-completo">
+                    <h2>📦 Ejemplo completo: CRUD de productos</h2>
+                    <p>Puedes descargar la plantilla completa desde el repositorio (próximamente).</p>
+                </section>
+
+                <footer style="text-align: center; margin-top: 3rem; padding: 2rem 0; border-top: 1px solid var(--ac-gray-200);">
+                    <p>AcadFrame v1.0 – Hecho para sistemas académicos modernos.</p>
+                </footer>
+            </div>
+        </main>
+    </div>
+
+    <!-- AcadFrame JS -->
+    <script src="../js/acadframe.js"></script>
+    <script>
+        // Pequeño script para resaltar el enlace activo en sidebar al hacer scroll (opcional)
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.ac-sidebar-nav a');
+        function setActiveLink() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', setActiveLink);
+        setActiveLink();
+    </script>
+</body>
+</html>

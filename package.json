@@ -1,0 +1,16 @@
+{
+    "name": "AcadFrame",
+    "version": "v1.0.0",
+    "scripts": {
+        "build:css": "postcss css/acadframe.css --output css/acadframe.min.css --env production",
+        "build:js": "terser js/acadframe.js --output js/acadframe.min.js --compress --mangle",
+        "build": "npm run build:css && npm run build.js"
+    },
+    "devDependencies": {
+        "cssnano": "^8.0.2",
+        "postcss": "^8.5.15",
+        "postcss-cli": "^11.0.0",
+        "postcss-import": "^16.1.0",
+        "terser": "^5.48.0"
+    }
+}

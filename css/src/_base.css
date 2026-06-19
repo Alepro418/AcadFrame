@@ -1,0 +1,365 @@
+/* ========================================
+   AcadFrame - Base
+   Tipografía, elementos HTML y estilos fundamentales
+   ======================================== */
+
+/* Importar variables (si este archivo se usa independiente, pero en producción se importa desde acadframe.css) */
+/* @import '_variables.css'; */  /* Comentado porque se importa desde el archivo principal */
+
+/* ----------------------------------------
+   TIPOGRAFÍA Y CUERPO
+   ---------------------------------------- */
+body {
+    font-family: var(--ac-font-sans);
+    font-size: var(--ac-font-size-base);
+    line-height: 1.5;
+    color: var(--ac-gray-700);
+    background-color: var(--ac-gray-50);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ----------------------------------------
+   ENCABEZADOS
+   ---------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--ac-gray-800);
+    letter-spacing: -0.01em;
+    margin-bottom: var(--ac-spacing-3);
+}
+
+h1 {
+    font-size: var(--ac-font-size-4xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+h2 {
+    font-size: var(--ac-font-size-3xl);
+}
+h3 {
+    font-size: var(--ac-font-size-2xl);
+}
+h4 {
+    font-size: var(--ac-font-size-xl);
+}
+h5 {
+    font-size: var(--ac-font-size-lg);
+}
+h6 {
+    font-size: var(--ac-font-size-base);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ----------------------------------------
+   PÁRRAFOS Y TEXTO
+   ---------------------------------------- */
+p {
+    margin-bottom: var(--ac-spacing-4);
+}
+strong, b {
+    font-weight: 600;
+    color: var(--ac-gray-900);
+}
+em, i {
+    font-style: italic;
+}
+small {
+    font-size: var(--ac-font-size-sm);
+    color: var(--ac-gray-500);
+}
+code, kbd, samp, pre {
+    font-family: var(--ac-font-mono);
+    font-size: 0.875em;
+}
+code {
+    background: var(--ac-gray-100);
+    padding: 0.2rem 0.4rem;
+    border-radius: var(--ac-radius-sm);
+    color: var(--ac-danger);
+}
+pre {
+    background: var(--ac-gray-900);
+    color: var(--ac-gray-100);
+    padding: var(--ac-spacing-4);
+    border-radius: var(--ac-radius-md);
+    overflow-x: auto;
+    margin-bottom: var(--ac-spacing-4);
+}
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* ----------------------------------------
+   ENLACES
+   ---------------------------------------- */
+a {
+    color: var(--ac-primary-600);
+    text-decoration: none;
+    transition: var(--ac-transition-fast);
+}
+a:hover {
+    color: var(--ac-primary-700);
+    text-decoration: underline;
+}
+
+/* ----------------------------------------
+   LISTAS
+   ---------------------------------------- */
+ul, ol {
+    margin-bottom: var(--ac-spacing-4);
+    padding-left: var(--ac-spacing-5);
+}
+ul {
+    list-style-type: disc;
+}
+ol {
+    list-style-type: decimal;
+}
+li {
+    margin-bottom: var(--ac-spacing-1);
+}
+/* Listas sin estilos (clase utilitaria) */
+.list-none {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* ----------------------------------------
+   TABLAS (estilo base sin clases)
+   ---------------------------------------- */
+table {
+    width: 100%;
+    margin-bottom: var(--ac-spacing-4);
+    border-collapse: collapse;
+}
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--ac-gray-200);
+}
+th {
+    font-weight: 600;
+    background-color: var(--ac-gray-50);
+    color: var(--ac-gray-900);
+}
+/* Nota: para tablas más estilizadas usar las clases .ac-table */
+
+/* ----------------------------------------
+   FORMULARIOS (base sin clases)
+   ---------------------------------------- */
+label {
+    font-weight: 500;
+    font-size: var(--ac-font-size-sm);
+    margin-bottom: var(--ac-spacing-1);
+    display: inline-block;
+}
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--ac-gray-200);
+    border-radius: var(--ac-radius-md);
+    font-family: inherit;
+    font-size: var(--ac-font-size-base);
+    transition: var(--ac-transition-fast);
+}
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--ac-primary-500);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+button, input[type="submit"], input[type="reset"] {
+    cursor: pointer;
+}
+fieldset {
+    border: 1px solid var(--ac-gray-200);
+    border-radius: var(--ac-radius-md);
+    padding: var(--ac-spacing-4);
+    margin-bottom: var(--ac-spacing-4);
+}
+legend {
+    font-weight: 600;
+    padding: 0 var(--ac-spacing-2);
+}
+
+/* ----------------------------------------
+   IMÁGENES Y MEDIA
+   ---------------------------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--ac-radius-md);
+}
+figure {
+    margin: 0 0 var(--ac-spacing-4) 0;
+}
+figcaption {
+    font-size: var(--ac-font-size-sm);
+    color: var(--ac-gray-500);
+    text-align: center;
+    margin-top: var(--ac-spacing-2);
+}
+
+/* ----------------------------------------
+   CITAS Y BLOQUES
+   ---------------------------------------- */
+blockquote {
+    border-left: 4px solid var(--ac-primary-300);
+    background: var(--ac-gray-50);
+    padding: var(--ac-spacing-4);
+    margin: var(--ac-spacing-4) 0;
+    border-radius: var(--ac-radius-md);
+    font-style: italic;
+    color: var(--ac-gray-700);
+}
+hr {
+    border: none;
+    border-top: 1px solid var(--ac-gray-200);
+    margin: var(--ac-spacing-6) 0;
+}
+
+/* ----------------------------------------
+   UTILIDADES DE TEXTO Y FONDO (base)
+   ---------------------------------------- */
+.text-left    { text-align: left; }
+.text-center  { text-align: center; }
+.text-right   { text-align: right; }
+.text-justify { text-align: justify; }
+
+.text-uppercase  { text-transform: uppercase; }
+.text-lowercase  { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+.font-light   { font-weight: 300; }
+.font-normal  { font-weight: 400; }
+.font-medium  { font-weight: 500; }
+.font-semibold{ font-weight: 600; }
+.font-bold    { font-weight: 700; }
+
+.text-sm { font-size: var(--ac-font-size-sm); }
+.text-base{ font-size: var(--ac-font-size-base); }
+.text-lg { font-size: var(--ac-font-size-lg); }
+.text-xl { font-size: var(--ac-font-size-xl); }
+.text-2xl{ font-size: var(--ac-font-size-2xl); }
+.text-3xl{ font-size: var(--ac-font-size-3xl); }
+.text-4xl{ font-size: var(--ac-font-size-4xl); }
+
+.text-primary { color: var(--ac-primary-500); }
+.text-success { color: var(--ac-success); }
+.text-danger  { color: var(--ac-danger); }
+.text-warning { color: var(--ac-warning); }
+.text-info    { color: var(--ac-info); }
+.text-muted   { color: var(--ac-gray-500); }
+
+.bg-primary-light { background-color: var(--ac-primary-50); }
+.bg-gray-light    { background-color: var(--ac-gray-50); }
+.bg-white         { background-color: white; }
+
+/* ----------------------------------------
+   ESPACIADO (margin y padding rápidos)
+   ---------------------------------------- */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--ac-spacing-1); }
+.m-2 { margin: var(--ac-spacing-2); }
+.m-3 { margin: var(--ac-spacing-3); }
+.m-4 { margin: var(--ac-spacing-4); }
+.m-5 { margin: var(--ac-spacing-5); }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: var(--ac-spacing-1); }
+.mt-2 { margin-top: var(--ac-spacing-2); }
+.mt-3 { margin-top: var(--ac-spacing-3); }
+.mt-4 { margin-top: var(--ac-spacing-4); }
+.mt-5 { margin-top: var(--ac-spacing-5); }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--ac-spacing-1); }
+.mb-2 { margin-bottom: var(--ac-spacing-2); }
+.mb-3 { margin-bottom: var(--ac-spacing-3); }
+.mb-4 { margin-bottom: var(--ac-spacing-4); }
+.mb-5 { margin-bottom: var(--ac-spacing-5); }
+
+.ml-0 { margin-left: 0; }
+.ml-1 { margin-left: var(--ac-spacing-1); }
+.ml-2 { margin-left: var(--ac-spacing-2); }
+.ml-3 { margin-left: var(--ac-spacing-3); }
+.ml-4 { margin-left: var(--ac-spacing-4); }
+
+.mr-0 { margin-right: 0; }
+.mr-1 { margin-right: var(--ac-spacing-1); }
+.mr-2 { margin-right: var(--ac-spacing-2); }
+.mr-3 { margin-right: var(--ac-spacing-3); }
+.mr-4 { margin-right: var(--ac-spacing-4); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--ac-spacing-1); }
+.p-2 { padding: var(--ac-spacing-2); }
+.p-3 { padding: var(--ac-spacing-3); }
+.p-4 { padding: var(--ac-spacing-4); }
+.p-5 { padding: var(--ac-spacing-5); }
+
+/* ----------------------------------------
+   DISPLAY Y POSICIONAMIENTO
+   ---------------------------------------- */
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+/* Flex helpers */
+.flex-row    { flex-direction: row; }
+.flex-col    { flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.items-end   { align-items: flex-end; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-start   { justify-content: flex-start; }
+.justify-end     { justify-content: flex-end; }
+.gap-1 { gap: var(--ac-spacing-1); }
+.gap-2 { gap: var(--ac-spacing-2); }
+.gap-3 { gap: var(--ac-spacing-3); }
+.gap-4 { gap: var(--ac-spacing-4); }
+
+/* ----------------------------------------
+   BORDES Y SOMBRAS
+   ---------------------------------------- */
+.rounded-none { border-radius: 0; }
+.rounded-sm   { border-radius: var(--ac-radius-sm); }
+.rounded-md   { border-radius: var(--ac-radius-md); }
+.rounded-lg   { border-radius: var(--ac-radius-lg); }
+.rounded-xl   { border-radius: var(--ac-radius-xl); }
+.rounded-full { border-radius: var(--ac-radius-full); }
+
+.shadow-sm { box-shadow: var(--ac-shadow-sm); }
+.shadow-md { box-shadow: var(--ac-shadow-md); }
+.shadow-lg { box-shadow: var(--ac-shadow-lg); }
+.shadow-xl { box-shadow: var(--ac-shadow-xl); }
+.shadow-none { box-shadow: none; }
+
+/* ----------------------------------------
+   ANCHO MÁXIMO Y CONTENEDORES
+   ---------------------------------------- */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--ac-spacing-4);
+    padding-right: var(--ac-spacing-4);
+}
+.w-full { width: 100%; }
+.h-full { height: 100%; }

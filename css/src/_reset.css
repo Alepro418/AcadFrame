@@ -1,0 +1,273 @@
+/* ========================================
+   AcadFrame - Reset CSS
+   Normalización ligera y consistente
+   ======================================== */
+
+/* 1. Box sizing en todos los elementos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Eliminar márgenes y paddings por defecto */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* 3. Elementos HTML5 como bloque */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/* 4. Escala base consistente */
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* 5. Body base (sin estilos adicionales, solo fondo y comportamiento) */
+body {
+    line-height: 1.5;
+    background-color: #fff;  /* se sobreescribirá con las variables en _base.css */
+    color: #111;
+}
+
+/* 6. Listas sin viñetas */
+ol,
+ul {
+    list-style: none;
+}
+
+/* 7. Citas y bloques */
+blockquote,
+q {
+    quotes: none;
+}
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+    content: '';
+    content: none;
+}
+
+/* 8. Tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 9. Enlaces sin subrayado por defecto */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 10. Elementos de formulario heredan tipografía */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+/* 11. Botones sin bordes extra ni fondo por defecto */
+button,
+input {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    appearance: button;
+}
+
+/* 12. Eliminar el padding en fieldsets */
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* 13. Leyenda (legend) sin estilo extra */
+legend {
+    display: table;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* 14. Progreso y meter consistentes */
+progress {
+    vertical-align: baseline;
+}
+
+/* 15. Textarea sin redimensionable horizontal excesivo */
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+/* 16. Elementos interactivos con cursor pointer */
+[type="checkbox"],
+[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    outline-offset: -2px;
+}
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/* 17. Eliminar el fondo gris de botones en móviles */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* 18. Evitar que las imágenes y videos excedan su contenedor */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* 19. Ocultar elementos visualmente pero accesibles (para lectores de pantalla) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* 20. Estilo básico para elementos deshabilitados */
+[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

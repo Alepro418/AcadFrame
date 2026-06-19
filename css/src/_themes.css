@@ -1,0 +1,198 @@
+/* ========================================
+   AcadFrame - Temas y Modo Oscuro
+   Paletas de colores alternativas
+   ======================================== */
+
+/* ----------------------------------------
+   TEMA OCÉANO (por defecto, basado en índigo)
+   Si no se especifica ninguna clase, se usa el tema original de _variables.css
+   Esta clase fuerza el tema océano (esencialmente el mismo que el base)
+   ---------------------------------------- */
+.ac-theme-ocean {
+    --ac-primary-50: #eef2ff;
+    --ac-primary-100: #e0e7ff;
+    --ac-primary-200: #c7d2fe;
+    --ac-primary-300: #a5b4fc;
+    --ac-primary-400: #818cf8;
+    --ac-primary-500: #4f46e5;  /* índigo */
+    --ac-primary-600: #4338ca;
+    --ac-primary-700: #3730a3;
+    --ac-primary-800: #2e1065;
+    --ac-primary-900: #1e1b4b;
+
+    --ac-secondary-500: #0ea5e9;
+    --ac-secondary-600: #0284c7;
+    --ac-accent: #f59e0b;
+}
+
+/* ----------------------------------------
+   TEMA ESMERALDA (verde/teal)
+   ---------------------------------------- */
+.ac-theme-emerald {
+    --ac-primary-50: #ecfdf5;
+    --ac-primary-100: #d1fae5;
+    --ac-primary-200: #a7f3d0;
+    --ac-primary-300: #6ee7b7;
+    --ac-primary-400: #34d399;
+    --ac-primary-500: #10b981;  /* esmeralda */
+    --ac-primary-600: #059669;
+    --ac-primary-700: #047857;
+    --ac-primary-800: #065f46;
+    --ac-primary-900: #064e3b;
+
+    --ac-secondary-500: #14b8a6;
+    --ac-secondary-600: #0d9488;
+    --ac-accent: #fbbf24;  /* ámbar más claro */
+}
+
+/* ----------------------------------------
+   TEMA ROSA (cálido / moderno)
+   ---------------------------------------- */
+.ac-theme-rose {
+    --ac-primary-50: #fff1f2;
+    --ac-primary-100: #ffe4e6;
+    --ac-primary-200: #fecdd3;
+    --ac-primary-300: #fda4af;
+    --ac-primary-400: #fb7185;
+    --ac-primary-500: #f43f5e;  /* rosa */
+    --ac-primary-600: #e11d48;
+    --ac-primary-700: #be123c;
+    --ac-primary-800: #9f1239;
+    --ac-primary-900: #881337;
+
+    --ac-secondary-500: #f97316;
+    --ac-secondary-600: #ea580c;
+    --ac-accent: #8b5cf6;  /* morado como acento */
+}
+
+/* ----------------------------------------
+   MODO OSCURO (manual con clase .dark)
+   Este tema oscurece todos los colores neutros
+   ---------------------------------------- */
+.dark,
+.ac-dark-mode {
+    --ac-gray-50: #111827;
+    --ac-gray-100: #1f2937;
+    --ac-gray-200: #374151;
+    --ac-gray-300: #4b5563;
+    --ac-gray-400: #6b7280;
+    --ac-gray-500: #9ca3af;
+    --ac-gray-600: #d1d5db;
+    --ac-gray-700: #e5e7eb;
+    --ac-gray-800: #f3f4f6;
+    --ac-gray-900: #f9fafb;
+
+    --ac-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --ac-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+    --ac-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+    --ac-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.2);
+
+    background-color: var(--ac-gray-50);
+    color: var(--ac-gray-700);
+}
+
+/* Ajustes específicos para elementos en modo oscuro */
+.dark .ac-card,
+.ac-dark-mode .ac-card {
+    background: var(--ac-gray-100);
+    border-color: var(--ac-gray-200);
+}
+
+.dark .ac-table thead th,
+.ac-dark-mode .ac-table thead th {
+    background: var(--ac-gray-100);
+    color: var(--ac-gray-400);
+}
+
+.dark .ac-table tbody td,
+.ac-dark-mode .ac-table tbody td {
+    border-bottom-color: var(--ac-gray-200);
+    color: var(--ac-gray-300);
+}
+
+.dark .ac-table tbody tr:hover,
+.ac-dark-mode .ac-table tbody tr:hover {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+.dark .ac-btn-outline,
+.ac-dark-mode .ac-btn-outline {
+    border-color: var(--ac-gray-600);
+    color: var(--ac-gray-300);
+}
+
+.dark .ac-btn-outline:hover,
+.ac-dark-mode .ac-btn-outline:hover {
+    border-color: var(--ac-primary-500);
+    background: rgba(79, 70, 229, 0.2);
+}
+
+.dark .ac-input,
+.dark .ac-select,
+.dark .ac-textarea,
+.ac-dark-mode .ac-input,
+.ac-dark-mode .ac-select,
+.ac-dark-mode .ac-textarea {
+    background: var(--ac-gray-100);
+    border-color: var(--ac-gray-300);
+    color: var(--ac-gray-700);
+}
+
+/* ----------------------------------------
+   MODO OSCURO AUTOMÁTICO (prefiere-color-scheme)
+   Se activa si el sistema operativo tiene tema oscuro
+   ---------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    .ac-auto-dark {
+        --ac-gray-50: #111827;
+        --ac-gray-100: #1f2937;
+        --ac-gray-200: #374151;
+        --ac-gray-300: #4b5563;
+        --ac-gray-400: #6b7280;
+        --ac-gray-500: #9ca3af;
+        --ac-gray-600: #d1d5db;
+        --ac-gray-700: #e5e7eb;
+        --ac-gray-800: #f3f4f6;
+        --ac-gray-900: #f9fafb;
+
+        --ac-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+        --ac-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+        --ac-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+        --ac-shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.2);
+
+        background-color: var(--ac-gray-50);
+        color: var(--ac-gray-700);
+    }
+
+    /* Ajustes de componentes para .ac-auto-dark igual que .dark */
+    .ac-auto-dark .ac-card {
+        background: var(--ac-gray-100);
+        border-color: var(--ac-gray-200);
+    }
+    .ac-auto-dark .ac-table thead th {
+        background: var(--ac-gray-100);
+        color: var(--ac-gray-400);
+    }
+    .ac-auto-dark .ac-table tbody td {
+        border-bottom-color: var(--ac-gray-200);
+        color: var(--ac-gray-300);
+    }
+    .ac-auto-dark .ac-table tbody tr:hover {
+        background: rgba(79, 70, 229, 0.1);
+    }
+    .ac-auto-dark .ac-btn-outline {
+        border-color: var(--ac-gray-600);
+        color: var(--ac-gray-300);
+    }
+    .ac-auto-dark .ac-btn-outline:hover {
+        border-color: var(--ac-primary-500);
+        background: rgba(79, 70, 229, 0.2);
+    }
+    .ac-auto-dark .ac-input,
+    .ac-auto-dark .ac-select,
+    .ac-auto-dark .ac-textarea {
+        background: var(--ac-gray-100);
+        border-color: var(--ac-gray-300);
+        color: var(--ac-gray-700);
+    }
+}

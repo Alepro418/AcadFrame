@@ -1,0 +1,25 @@
+/* ========================================
+   Utilidades (espaciado, texto, display)
+   ======================================== */
+
+/* Márgenes */
+.mt-1 { margin-top: var(--ac-spacing-1); }
+.mt-2 { margin-top: var(--ac-spacing-2); }
+.mt-3 { margin-top: var(--ac-spacing-3); }
+.mt-4 { margin-top: var(--ac-spacing-4); }
+.mb-1 { margin-bottom: var(--ac-spacing-1); }
+.mb-2 { margin-bottom: var(--ac-spacing-2); }
+.mb-3 { margin-bottom: var(--ac-spacing-3); }
+.mb-4 { margin-bottom: var(--ac-spacing-4); }
+
+/* Textos */
+.text-center { text-align: center; }
+.text-primary { color: var(--ac-primary-500); }
+.text-success { color: var(--ac-success); }
+.text-danger { color: var(--ac-danger); }
+.text-muted { color: var(--ac-gray-500); }
+
+/* Display */
+.hidden { display: none; }
+.block { display: block; }
+.flex { display: flex; }

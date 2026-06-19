@@ -1,0 +1,17 @@
+/* ========================================
+   AcadFrame CSS Framework v1.0.0
+   Framework para sistemas académicos
+   Creado por Bachiller Álvaro Parra - Puerto Cabello, Venezuela
+   ======================================== */
+
+   /* Primero importamos el reset */
+@import 'src/_reset.css';
+
+    /* Luego agregamos las variables y la base */
+@import 'src/_variables.css';
+@import 'src/_base.css';
+
+    /* Por último las componentes, utilidades y demás */
+@import 'src/_components.css';
+@import 'src/_utilities.css';   /* si tienes utilidades adicionales */
+@import 'src/_themes.css';      /* cuando lo crees */
