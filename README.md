@@ -4,7 +4,7 @@
 
 Creado por **Álvaro Parra** desde **Puerto Cabello, Venezuela**.
 
-![Versión](https://img.shields.io/badge/version-1.0.0-blue)
+![Versión](https://img.shields.io/badge/version-beta-blue)
 ![Licencia](https://img.shields.io/badge/license-MIT-green)
 
 ---
