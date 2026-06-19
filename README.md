@@ -2,7 +2,7 @@
 
 **Framework CSS/JS ligero y moderno para sistemas académicos y proyectos personales.**
 
-Creado por **[Tu Nombre]** desde **Puerto Cabello, Venezuela**.
+Creado por **Álvaro Parra** desde **Puerto Cabello, Venezuela**.
 
 ![Versión](https://img.shields.io/badge/version-1.0.0-blue)
 ![Licencia](https://img.shields.io/badge/license-MIT-green)
@@ -162,7 +162,6 @@ acadframe/
 
 Creado por Álvaro Parra
 📍 Puerto Cabello, Venezuela
-🐦 [@tu-usuario] (si tienes redes)
 📧 parraalavaro418@gmail.com
 
 Si usas AcadFrame en tus proyectos, ¡me encantaría saberlo!
